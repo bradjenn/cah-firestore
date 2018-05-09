@@ -1,4 +1,11 @@
 import React from 'react'
+import classNames from 'classnames/bind'
+
+import Input from '../../components/Input'
+import Button from '../../components/Button'
+import styles from './styles.module.css'
+
+const cx = classNames.bind(styles)
 
 const LoginPage = ({ handleOnSubmit, handleOnChange, formState }) => {
   const _onChange = evt => {
@@ -12,9 +19,11 @@ const LoginPage = ({ handleOnSubmit, handleOnChange, formState }) => {
   }
 
   return (
-    <div>
-      <form onSubmit={_handleOnSubmit}>
-        <input
+    <div className={cx('page')}>
+      <h1 className={cx('pageTitle')}>Sign In</h1>
+
+      <form className={cx('loginForm')} onSubmit={_handleOnSubmit}>
+        <Input
           type="email"
           autoComplete="new-password"
           name="email"
@@ -22,7 +31,7 @@ const LoginPage = ({ handleOnSubmit, handleOnChange, formState }) => {
           placeholder="email"
         />
 
-        <input
+        <Input
           type="password"
           autoComplete="new-password"
           name="password"
@@ -30,7 +39,7 @@ const LoginPage = ({ handleOnSubmit, handleOnChange, formState }) => {
           placeholder="password"
         />
 
-        <button type="submit">Login</button>
+        <Button black type="submit" title="Sign In" />
       </form>
     </div>
   )

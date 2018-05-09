@@ -1,69 +1,26 @@
-/* .input { */
-/*   height: $input-height; */
-/*   line-height: $input-height; */
-/*  */
-/*   width: 100%; */
-/*  */
-/*   padding-top: 0; */
-/*   padding-left: .5rem; */
-/*   padding-right: .5rem; */
-/*   padding-bottom: 0; */
-/*  */
-/*   font-family: "AvenirNext"; */
-/*   font-size: 16px; */
-/*  */
-/*   border-width: 1px; */
-/*   border-style: solid; */
-/*   border-color: $input-border-color; */
-/*   border-radius: 4px; */
-/*  */
-/*   box-sizing: border-box; */
-/*   -webkit-appearance: none; */
-/*  */
-/*   &:focus { */
-/*     outline: none; */
-/*     border-color: $input-focus-border-color; */
-/*   } */
-/*  */
-/*   &Error { */
-/*     border-color: $error; */
-/*  */
-/*     &:focus { */
-/*       border-color: $error; */
-/*     } */
-/*   } */
-/*  */
-/*   &Success { */
-/*     border-color: $success; */
-/*   } */
-/*  */
-/*   &:disabled { */
-/*     background-color: #f8fafb; */
-/*     pointer-events: none; */
-/*     opacity: 1; */
-/*     border-color: #dfe7eb; */
-/*   } */
-/* } */
-/*  */
-/* .showPassword { */
-/*   position: absolute; */
-/*   right: 0; */
-/*   top: 0; */
-/*   background-color: transparent; */
-/*   border: 0; */
-/*   outline: 0; */
-/*   height: 24px; */
-/*   width: 23px; */
-/*   padding: 0; */
-/*  */
-/*   line-height: 20px; */
-/*   color: $icon-color; */
-/*  */
-/*   cursor: pointer; */
-/*  */
-/*   &Icon { */
-/*     position: absolute; */
-/*     right: 0; */
-/*     top: 0; */
-/*   } */
-/* } */
+.inputWrapper {
+  padding: 0;
+  margin: 0 0 14px;
+}
+
+.input {
+  font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+  width: 100%;
+  color: #232323;
+  font-weight: bold;
+  background: #cecece;
+  border: 1px solid #cecece;
+  text-align: center;
+  outline: 0;
+  padding: 15px;
+  padding: 0.9375rem;
+  font-size: 18px;
+  font-size: 1.125rem;
+  line-height: 18px;
+  line-height: 1.125rem;
+  -webkit-appearance: none;
+
+  &:focus {
+    outline: none;
+  }
+}

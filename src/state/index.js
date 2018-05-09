@@ -2,10 +2,10 @@ import { combineReducers, createStore, applyMiddleware } from 'redux'
 import thunk from 'redux-thunk'
 import { composeWithDevTools } from 'redux-devtools-extension/logOnlyInProduction'
 
-import userReducer from './users/reducer'
+import userReducer from './user/reducer'
 
 export const reducers = combineReducers({
-  userReducer,
+  user: userReducer,
 })
 
 const composeEnhancers = composeWithDevTools({})

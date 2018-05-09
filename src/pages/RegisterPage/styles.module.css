@@ -1,0 +1,19 @@
+.page {
+  align-items: center;
+  justify-content: center;
+  background: #fff;
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+}
+
+.pageTitle {
+  color: #232323;
+}
+
+.loginForm {
+  max-width: 420px;
+  width: 100%;
+  margin: 0;
+  padding: 0 10px;
+}

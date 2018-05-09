@@ -6,7 +6,7 @@ import { connect } from 'react-redux'
 import LoginPage from './LoginPage'
 import handlers from './handlers'
 import stateHandlers from './stateHandlers'
-import { login } from '../../state/users/actionCreators'
+import { login } from '../../state/user/actionCreators'
 
 const mapStateToProps = () => {
   return {}

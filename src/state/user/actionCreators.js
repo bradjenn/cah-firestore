@@ -1,6 +1,27 @@
 import firebase from '../../firebase'
 import * as actions from './actions'
 
+export function fetchUser() {
+  return dispatch => {
+    dispatch({ type: actions.USER_FETCH_BEGIN })
+
+    return firebase.auth().onAuthStateChanged(user => {
+      setTimeout(() => {
+        if (user) {
+          dispatch({
+            type: actions.USER_FETCH_SUCCESS,
+            payload: user,
+          })
+
+          return Promise.resolve(user)
+        } else {
+          dispatch({ type: actions.USER_FETCH_FAILED })
+        }
+      }, 0)
+    })
+  }
+}
+
 export function register({ email, password }) {
   return dispatch => {
     dispatch({ type: actions.USER_REGISTER_BEGIN })

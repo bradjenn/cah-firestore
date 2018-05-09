@@ -1,7 +1,8 @@
 import React from 'react'
 
-const HomePage = () => {
-  return <div>hello</div>
+const HomePage = props => {
+  console.log(props.user.email)
+  return <div>hello {props.user.email}</div>
 }
 
 export default HomePage
