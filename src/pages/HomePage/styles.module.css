@@ -1,0 +1,27 @@
+.page {
+  height: 100%;
+}
+
+.body {
+  display: flex;
+  height: 100%;
+}
+
+.sidebar {
+  flex: 0 0 300px;
+  box-shadow: 4px 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.content {
+  flex: 1;
+}
+
+.roomsModule {
+  display: flex;
+  flex-direction: column;
+  padding: 0 20px;
+}
+
+.moduleTitle {
+  margin: 0;
+}

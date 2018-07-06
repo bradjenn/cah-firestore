@@ -1,8 +1,8 @@
 import React from 'react'
 import classNames from 'classnames/bind'
 
-import Input from '../../components/Input'
-import Button from '../../components/Button'
+import Input from 'Components/Input'
+import Button from 'Components/Button'
 import styles from './styles.module.css'
 
 const cx = classNames.bind(styles)

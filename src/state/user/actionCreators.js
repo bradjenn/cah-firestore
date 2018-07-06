@@ -1,21 +1,28 @@
-import firebase from '../../firebase'
+import { auth, firestore } from '../../firebase'
 import * as actions from './actions'
 
 export function fetchUser() {
   return dispatch => {
     dispatch({ type: actions.USER_FETCH_BEGIN })
 
-    return firebase.auth().onAuthStateChanged(user => {
+    return auth.onAuthStateChanged(user => {
       setTimeout(() => {
         if (user) {
-          dispatch({
-            type: actions.USER_FETCH_SUCCESS,
-            payload: user,
-          })
+          const usersRef = firestore.collection('users')
+          usersRef
+            .doc(user.uid)
+            .get()
+            .then(doc => {
+              dispatch({
+                type: actions.USER_FETCH_SUCCESS,
+                payload: doc.data(),
+              })
 
-          return Promise.resolve(user)
+              return Promise.resolve(doc.data())
+            })
         } else {
           dispatch({ type: actions.USER_FETCH_FAILED })
+          return Promise.reject()
         }
       }, 0)
     })
@@ -26,8 +33,7 @@ export function register({ email, password }) {
   return dispatch => {
     dispatch({ type: actions.USER_REGISTER_BEGIN })
 
-    return firebase
-      .auth()
+    return auth
       .createUserWithEmailAndPassword(email, password)
       .then(sendEmailVerification)
       .then(dispatchUserRegistered)
@@ -56,24 +62,15 @@ export function login({ email, password }) {
   return dispatch => {
     dispatch({ type: actions.USER_LOGIN_BEGIN })
 
-    return firebase
-      .auth()
+    return auth
       .signInWithEmailAndPassword(email, password)
       .then(dispatchUserLoggedIn)
       .catch(handleErrors)
 
-    // function sendEmailVerification(user) {
-    //   return user.sendEmailVerification()
-    //     .then(() => Promise.resolve(user))
-    //     .catch(error => Promise.reject(error))
-    // }
-
     function dispatchUserLoggedIn(user) {
-      console.log(user)
-
       dispatch({
         type: actions.USER_LOGIN_SUCCESS,
-        payload: {},
+        payload: user,
       })
       return Promise.resolve(user)
     }

@@ -1,0 +1,14 @@
+.ProfilePic {
+  background: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 45px;
+  height: 45px;
+  border-radius: 50%;
+  overflow: hidden;
+}
+
+.ProfilePic--Image {
+  height: 100%;
+}

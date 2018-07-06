@@ -1,0 +1,19 @@
+.Header {
+  display: flex;
+  align-items: center;
+  background: #232323;
+  height: 70px;
+  padding: 0 20px;
+}
+
+.Header--UserInfo {
+  display: flex;
+  align-items: center;
+  margin-left: auto;
+}
+
+.UserInfo--Name {
+  display: none;
+  color: #fff;
+  margin: 0 15px 0 0;
+}

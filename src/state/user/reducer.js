@@ -41,7 +41,7 @@ const isAuthenticated = (state = false, action) => {
 }
 
 const initialProfileState = {
-  name: null,
+  displayName: null,
   email: '',
   photoUrl: undefined,
   emailVerified: false,
@@ -52,7 +52,7 @@ const profile = (state = initialProfileState, { type, payload }) => {
   switch (type) {
     case actions.USER_FETCH_SUCCESS:
       return {
-        name: payload.displayName,
+        displayName: payload.displayName,
         email: payload.email,
         photoUrl: payload.photoUrl,
         emailVerified: payload.emailVerified,
